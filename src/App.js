@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { makeStyles } from "@material-ui/core";
+import Navbar from "./components/Navbar";
+import Home from "./components/HomeSection";
+
+const useStyles = makeStyles({
+  button: {
+    position: 'fixed',
+    justifyContent: 'center',
+  },
+})
 
 function App() {
+
+  const classes = useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div position = 'fixed' ><Navbar id='home' /></div>
+      <Home/>
+      {/*<Button className={classes.button} color="default" text="press my titties daddy" variant="outlined"/>*/}
     </div>
   );
 }
