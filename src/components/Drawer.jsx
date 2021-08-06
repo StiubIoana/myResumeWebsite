@@ -12,15 +12,11 @@ const useStyles = makeStyles({
         display: 'flex',
         flexDirection: 'column',
         width: '150px',
-        alignSelf: 'center',
+        alignSelf: 'center'
     },
     paper: {
-        backgroundColor: '#41b3a3',
+        backgroundColor: '#a6e9d7',
     },
-    buttonText: {
-        fontSize: '1.1em',
-        color: 'black',
-    }
 });
 
 export default function TemporaryDrawer() {
@@ -41,37 +37,45 @@ export default function TemporaryDrawer() {
     const buttons = [
     {
         title:"Home",
-        ref:"#home"
+        ref:"#home",
+        icon: <HomeIcon/>,
+        id: 1
     },
 
     {
         title:"About",
-        ref:"http://www.google.com/"
+        ref:"http://www.google.com/",
+        icon: <InfoIcon/>,
+        id: 2
     },
 
     {
         title:"Skills",
-        ref:"http://www.google.com/"
+        ref:"http://www.google.com/",
+        icon: <FreeBreakfastIcon/>,
+        id: 3
     },
 
     {
         title:"Projects",
-        ref:"http://www.google.com/"
+        ref:"http://www.google.com/",
+        icon: <AssignmentIcon/>,
+        id: 4
     },
 
     {
         title:"Contact",
-        ref:"http://www.google.com/"
-    },
-    ];
-
-    const icons = [<HomeIcon/>, <InfoIcon/>, <FreeBreakfastIcon/>, <AssignmentIcon/>, <EmailIcon/>];
+        ref:"http://www.google.com/",
+        icon: <EmailIcon/>,
+        id: 5
+    }
+];
 
     const list = (anchor) => (
         <div onClick = {toggleDrawer(anchor, false)}>
             <List className = {classes.list}>
-                {buttons.map((value, index) => (
-                    <Button style={{color: "black"}} href={value.ref}>{icons[index]}{value.title}</Button>
+                {buttons.map((value) => (
+                    <Button style={{color: "black", marginTop:"5px", marginBottom:"10px", fontSize: "1em"}} href={value.ref} key={value.id}>{value.icon}{value.title}</Button>
                 ))}
             </List>
         </div>

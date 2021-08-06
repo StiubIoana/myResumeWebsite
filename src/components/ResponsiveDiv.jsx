@@ -1,10 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
+import SlidingTextBoxes from './SlidingTextBoxes'
 
 const useStyles = makeStyles((theme) => ({
     responsiveImg: {
         position: "relative",
-        maxWidth: "100%"
+        maxWidth: "100%",
     },
     responsiveImg_img: {
         position: "relative",
@@ -17,13 +18,13 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function ResponsiveImage(props) {
-    const { src, width, alt } = props;
+export default function ResponsiveDiv(props) {
+    const { width, height} = props;
     const classes = useStyles();
 
     return (
-      <div style={{width: "100%", textAlign:"center"}} className={classes.responsiveImg}>
-        <img src={ src } className={classes.responsiveImg_img} alt = {alt} style={{width: width}}/>
+      <div style={{width: width}} className={classes.responsiveImg}>
+        <SlidingTextBoxes className={classes.responsiveImg_img} width={width} height={height}/>
       </div>
     );
 }

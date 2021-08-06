@@ -1,5 +1,23 @@
-import { React, useState, useEffect } from 'react';
+import { React, useState, useEffect, makeStyles } from 'react';
+import homeImg from '../imgs/home3.jpg'
+import ResponsiveImage from './ResponsiveImg';
 import ResponsiveDiv from './ResponsiveDiv';
+
+const useStyles = makeStyles((theme) => ({
+    responsiveContainer: {
+        position: "relative",
+        maxWidth: "100%",
+    },
+    responsiveElement: {
+        position: "relative",
+        top: "0",
+        right: "0",
+        bottom: "0",
+        left: "0",
+        width: "100%",
+        heigth: "100%"
+    }
+}));
 
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
